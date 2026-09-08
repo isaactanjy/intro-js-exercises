@@ -60,8 +60,12 @@ Instructions: Write a function which takes an array and returns a new array with
   original array.
 ===================== */
 
-let plusOne = (n) => {};
-let mapIncrement = (arr) => {};
+let plusOne = (n) => {
+  return (++n)
+};
+let mapIncrement = (arr) => {
+  return arr.map(n => plusOne(n)) // always remember to put the variable AFTER the function within the ()
+};
 
 console.log('mapIncrement success:', _(mapIncrement([1, 2, 3, 4, 5, 4, 4])).isEqual([2, 3, 4, 5, 6, 5, 5]));
 
@@ -72,8 +76,12 @@ Instructions: Write a function which takes an array and returns a new array with
   original array.
 ===================== */
 
-let timesThree = (n) => {};
-let mapTriple = (arr) => {};
+let timesThree = (n) => {
+   return (n * 3)
+};
+let mapTriple = (arr) => {
+  return arr.map(n => timesThree(n))
+};
 
 console.log('mapTriple success:', _(mapTriple([1, 2, 3, 4, 5, 4, 4])).isEqual([3, 6, 9, 12, 15, 12, 12]));
 
@@ -84,8 +92,12 @@ Instructions: Write a function which takes an array and returns the sum of all
   array.
 ===================== */
 
-let add = (n1, n2) => {};
-let reduceSum = (arr) => {};
+let add = (n1, n2) => {
+  return (n1 + n2)
+};
+let reduceSum = (arr) => {
+  return arr.reduce(add) // make sure you are using the right function
+};
 
 console.log('reduceSum success:', reduceSum([1, 2, 3, 4, 5, 4, 4]) === 23);
 
@@ -96,7 +108,11 @@ Instructions: Write a function which takes an array and returns the product of
   original array.
 ===================== */
 
-let multiply = (n1, n2) => {};
-let reduceProduct = (arr) => {};
+let multiply = (n1, n2) => {
+  return (n1 * n2)
+};
+let reduceProduct = (arr) => {
+  return arr.reduce(multiply)
+};
 
 console.log('reduceProduct success:', reduceProduct([1, 2, 3, 4, 5, 4, 4]) === 1920);
