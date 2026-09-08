@@ -58,7 +58,6 @@ for (let i = 1; i <= 100; i++) {
     }
 }
 
-// It is important that the FizzBuzz 'if' line is on top. Why? Because both the fizzes and the buzzes get assigned, so the line of code that is last does not actually get evaluated. This is why it has to go first.
 
 /* =====================
 
