@@ -167,7 +167,7 @@ Instructions: Write a function which takes an array and returns a new array with
 ===================== */
 
 let isOdd = (n) => {
-  return (n % 2 !== 0)
+  return (n % 2 !== 0);
 };
 let filterOdd = (arr) => {
   const oddArr = [];
@@ -191,7 +191,7 @@ Instructions: Write a function which takes an array and returns a new array with
 ===================== */
 
 let plusOne = (n) => {
-  return (++n)
+  return (++n);
 };
 let mapIncrement = (arr) => {
   const incArr = [];
@@ -211,7 +211,7 @@ Instructions: Write a function which takes an array and returns a new array with
 ===================== */
 
 let timesThree = (n) => {
-   return (n * 3)
+   return (n * 3);
 };
 let mapTriple = (arr) => {
   const triArr = [];
@@ -231,7 +231,7 @@ Instructions: Write a function which takes an array and returns the sum of all
 ===================== */
 
 let add = (n1, n2) => {
-  return (n1 + n2)
+  return (n1 + n2);
 };
 let reduceSum = (arr) => {
   let sum = 0; // let instead of const here because you expect to change it
@@ -251,7 +251,7 @@ Instructions: Write a function which takes an array and returns the product of
 ===================== */
 
 let multiply = (n1, n2) => {
-  return (n1 * n2)
+  return (n1 * n2);
 };
 let reduceProduct = (arr) => {
   let prod = 1; // note that this CANNOT be 0 as you are multiplying against it. It works for sum, but not for prod. Use 1 here.
