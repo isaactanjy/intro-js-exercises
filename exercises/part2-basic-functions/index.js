@@ -15,7 +15,8 @@ Example: "age(2000) should return 26"
 
 
 let age = (birthYear) => {
-    return (2026 - birthYear);
+    const currentYear = (new Date()).getFullYear(); // this runs the function to get the current year
+    return (currentYear - birthYear);
 };
 
 console.log('age success:', age(1971) === 55);
@@ -26,7 +27,7 @@ Example: "plusOne(2) should return 3"
 ===================== */
 
 let plusOne = (num) => {
-    return (++num)
+    return (++num);
 };
 
 console.log('plusOne success:', plusOne(99) === 100);
@@ -36,9 +37,7 @@ Instructions: Write a function that multiplies the number provided by three
 Example: "timesThree(2) should return 6"
 ===================== */
 
-let timesThree = (num) => {
-    return (num * 3)
-};
+let timesThree = (num) => num * 3;
 
 console.log('timesThree success:', timesThree(33) === 99);
 
@@ -47,9 +46,7 @@ Instructions: Write a function that adds two given numbers
 Example: "add(2, 3) should return 5"
 ===================== */
 
-let add = (a, b) => {
-    return (a + b)
-};
+let add = (a, b) => a + b;
 
 console.log('add success:', add(4, 6) === 10);
 
@@ -59,7 +56,7 @@ Example: "multiply(2, 3) should return 6"
 ===================== */
 
 let multiply = (a, b) => {
-    return (a * b)
+    return (a * b);
 };
 
 console.log('multiply success:', multiply(4, 6) === 24);
@@ -69,7 +66,7 @@ Instructions: Write a function that returns true if a number is even.
 ===================== */
 
 let isEven = (num) => {
-    return (num % 2 === 0)
+    return (num % 2 === 0);
 };
 
 console.log('isEven success:', isEven(2) === true && isEven(3) === false);
@@ -79,7 +76,7 @@ Instructions: Write a function that returns true if a number is odd.
 ===================== */
 
 let isOdd = (num) => {
-    return (num % 2 !== 0)
+    return (num % 2 !== 0);
 };
 
 console.log('isOdd success:', isOdd(4) === false && isOdd(5) === true);
@@ -101,7 +98,7 @@ Example: "valueAtKey({name: 'Nathan', age: 27}, 'name') should return 'Nathan'"
 ===================== */
 
 let valueAtKey = (obj, key) => {
-    return obj[key];
+    return obj[key]; // note that there are no single quotes around this because key is a variable with a string stored inside of it
 };
 
 console.log('valueAtKey success:', valueAtKey({ 'foo': 'bar' }, 'foo') === 'bar');
@@ -112,7 +109,11 @@ Example: "indexForValue(['Mercury', 'Venus', 'Earth', 'Mars'], 'Earth') should r
 ===================== */
 
 let indexForValue = (arr, value) => {
-    return arr.indexOf(value);
+    for (let i = 0; i < arr.length; i++) { // can't declare i as a const because we are reusing the same key variable (and adding to it)
+        if (value === arr[i]) {
+            return i;
+        }
+    }
 };
 
 console.log('indexForValue success:', indexForValue([9, 8, 7, 6, 5], 7) === 2);
@@ -123,7 +124,11 @@ Example: "keyForValue({name: 'Nathan', age: 27}, 'Nathan') should return 'name'"
 ===================== */
 
 let keyForValue = (obj, value) => {
-    return Object.keys(obj).find(key => obj[key] === value); // check with Mjumbe on why this undefined(?) function works?
+    for (const key in obj) { // because this is a new version in each iteration of the for loop, we can use the const here. It also works with 'let'.
+        if (value === obj[key]) {
+            return key;
+        }
+    }
 };
 
 console.log('keyForValue success:', keyForValue({ 'foo': 'bar', 'baz': 'qux' }, 'bar') === 'foo');
